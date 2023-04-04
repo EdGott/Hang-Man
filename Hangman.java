@@ -33,10 +33,12 @@ class Main {
             char guess = strGuess.charAt(0);
 
             if (checkIfUsed(word, guess, wordLength, lettersUsed) > 0){
+                System.out.print("\033[H\033[2J"); // CLEAR SCREEN
                 System.out.println("\nYou've already guessed that.");
                 System.out.println("\nGuess again.");
             }
             else {
+                System.out.print("\033[H\033[2J"); // Clear Screen
                 guessInWord(word, guess, strGuess, wordLength, blanks);
                 if (notInWord(word, guess, wordLength) == true) {
                     lives--;
